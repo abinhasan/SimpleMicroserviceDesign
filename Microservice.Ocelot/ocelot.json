@@ -26,5 +26,8 @@
       "UpstreamPathTemplate": "/apigateway/ProductService",
       "UpstreamHttpMethod": [ "GET", "PUT", "POST" ]
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
 }
