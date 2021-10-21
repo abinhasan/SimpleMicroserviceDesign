@@ -37,7 +37,6 @@ namespace Microservice.Ocelot
             }
 
             app.UseRouting();
-            app.UseOcelot();
 
             app.UseEndpoints(endpoints =>
             {
@@ -46,6 +45,8 @@ namespace Microservice.Ocelot
                     await context.Response.WriteAsync("Hello World!");
                 });
             });
+
+            app.UseOcelot().Wait();
         }
     }
 }

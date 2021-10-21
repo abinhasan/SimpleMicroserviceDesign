@@ -3,43 +3,28 @@
     //Customer API
     {
       "DownstreamPathTemplate": "/api/Customer",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "1789"
+          "Port": "44385"
         }
       ],
-      //"FileCacheOptions": {
-      //  "TtlSeconds": 30,
-      //  "Region": "customercaching"
-      //},
-      "UpstreamPathTemplate": "/Customer",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/apigateway/CustomerService",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST" ]
     },
     //Product API
     {
       "DownstreamPathTemplate": "/api/Product",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "49504"
+          "Port": "44364"
         }
       ],
-      //"RateLimitOptions": {
-      //  "ClientWhitelist": [],
-      //  "EnableRateLimiting": true,
-      //  "Period": "5s",
-      //  "PeriodTimespan": 1,
-      //  "Limit": 1
-      //},
-      "UpstreamPathTemplate": "/Product",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/apigateway/ProductService",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST" ]
     }
-  ],
-  "GlobalConfiguration": {
-    "RequestIdKey": "X-Correlation-Id",
-    "BaseUrl": "http://localhost:5000"
-  }
+  ]
 }
